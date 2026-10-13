@@ -1,0 +1,10 @@
+SELECT
+    PAYMENT_ID,
+    ORDER_ID,
+    PAYMENT_DATE,
+    PAYMENT_METHOD,
+    PAYMENT_STATUS,
+    AMOUNT
+FROM {{ source('retail', 'payments') }}
+WHERE PAYMENT_ID IS NOT NULL
+  AND AMOUNT >= 0

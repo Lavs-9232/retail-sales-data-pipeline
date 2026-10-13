@@ -1,0 +1,14 @@
+
+version: 2
+
+sources:
+  - name: retail
+    database: RETAIL_SALES_DB
+    schema: RAW
+    tables:
+      - name: customers
+      - name: products
+      - name: orders
+      - name: order_items
+      - name: payments
+      - name: returns
