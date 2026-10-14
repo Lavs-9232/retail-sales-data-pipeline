@@ -12,3 +12,46 @@ sources:
       - name: order_items
       - name: payments
       - name: returns
+      
+models:
+  - name: stg_customers
+    columns:
+      - name: CUSTOMER_ID
+        tests:
+          - not_null
+          - unique
+
+  - name: stg_products
+    columns:
+      - name: PRODUCT_ID
+        tests:
+          - not_null
+          - unique
+
+  - name: stg_orders
+    columns:
+      - name: ORDER_ID
+        tests:
+          - not_null
+          - unique
+
+  - name: stg_order_items
+    columns:
+      - name: ORDER_ITEM_ID
+        tests:
+          - not_null
+          - unique
+
+  - name: stg_payments
+    columns:
+      - name: PAYMENT_ID
+        tests:
+          - not_null
+          - unique
+
+  - name: stg_returns
+    columns:
+      - name: RETURN_ID
+        tests:
+          - not_null
+          - unique
