@@ -39,3 +39,5 @@ models:
  retail_sales_pipeline:
   staging:
       +materialized: view
+  marts:
+     +materialized: table
