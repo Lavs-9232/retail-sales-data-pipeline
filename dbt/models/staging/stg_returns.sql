@@ -1,0 +1,10 @@
+SELECT
+    RETURN_ID,
+    ORDER_ID,
+    PRODUCT_ID,
+    RETURN_DATE,
+    RETURN_REASON,
+    REFUND_AMOUNT
+FROM {{ source('retail', 'returns') }}
+WHERE RETURN_ID IS NOT NULL
+  AND REFUND_AMOUNT >= 0

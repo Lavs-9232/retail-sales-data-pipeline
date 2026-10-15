@@ -1,0 +1,9 @@
+SELECT
+    ORDER_ID,
+    CUSTOMER_ID,
+    ORDER_DATE,
+    ORDER_STATUS,
+    TOTAL_AMOUNT
+FROM {{ source('retail', 'orders') }}
+WHERE ORDER_ID IS NOT NULL
+  AND TOTAL_AMOUNT >= 0

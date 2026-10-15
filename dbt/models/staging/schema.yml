@@ -1,0 +1,57 @@
+
+version: 2
+
+sources:
+  - name: retail
+    database: RETAIL_SALES_DB
+    schema: RAW
+    tables:
+      - name: customers
+      - name: products
+      - name: orders
+      - name: order_items
+      - name: payments
+      - name: returns
+      
+models:
+  - name: stg_customers
+    columns:
+      - name: CUSTOMER_ID
+        tests:
+          - not_null
+          - unique
+
+  - name: stg_products
+    columns:
+      - name: PRODUCT_ID
+        tests:
+          - not_null
+          - unique
+
+  - name: stg_orders
+    columns:
+      - name: ORDER_ID
+        tests:
+          - not_null
+          - unique
+
+  - name: stg_order_items
+    columns:
+      - name: ORDER_ITEM_ID
+        tests:
+          - not_null
+          - unique
+
+  - name: stg_payments
+    columns:
+      - name: PAYMENT_ID
+        tests:
+          - not_null
+          - unique
+
+  - name: stg_returns
+    columns:
+      - name: RETURN_ID
+        tests:
+          - not_null
+          - unique
