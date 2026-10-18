@@ -10,7 +10,7 @@ CREATE STORAGE INTEGRATION RETAIL_S3_INTEGRATION
     TYPE = EXTERNAL_STAGE
     STORAGE_PROVIDER = S3
     ENABLED = TRUE
-    STORAGE_AWS_ROLE_ARN = 'arn:aws:iam::YOUR_AWS_ACCOUNT_ID:role/RetailS3Role'
+    STORAGE_AWS_ROLE_ARN = 'arn:aws:iam::936687422572:role/RetailS3Role'
     STORAGE_ALLOWED_LOCATIONS = ('s3://retail-sales-data-pipeline-2026/');
 
 -- CSV configuration
