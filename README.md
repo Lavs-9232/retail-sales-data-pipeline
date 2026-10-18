@@ -1,6 +1,7 @@
 # Retail Sales Data Pipeline
 
 ## Project Overview
+An end-to-end cloud data engineering portfolio project that processes retail sales data using AWS S3, Snowflake, and dbt Cloud. The project demonstrates data ingestion, transformation, data quality testing, incremental processing, and analytical data modeling.
 An end-to-end cloud data engineering project that processes retail sales data using AWS S3, Snowflake, and dbt Cloud. The project demonstrates data ingestion, transformation, data quality testing, and analytical data modeling.
 
 ## Architecture
@@ -21,6 +22,22 @@ The project uses six retail datasets:
 - Payments
 - Returns
 
+Customer files use Snowpipe for automatic ingestion; the other five datasets use batch loading through `COPY INTO`.
+
+## Key Implementations
+- Created the Snowflake database and RAW tables for retail datasets.
+- Configured S3 integration, an external stage, and Snowpipe for customer CSV ingestion.
+- Developed dbt staging models for source-data preparation and filtering.
+- Implemented customer, product, and date dimensions.
+- Developed sales and returns fact models.
+- Calculated sales amounts at the order-item level to support accurate sales analysis.
+- Enriched return records with payment method and payment status.
+- Added dbt data quality tests for selected unique and non-null columns.
+- Implemented an incremental sales model using a seven-day lookback window to help handle late-arriving records.
+- Created a customer snapshot to track historical changes.
+- Used a seed file for product category-to-department mapping.
+- Generated dbt documentation and model lineage.
+- 
 ## Key Implementations
 - Created Snowflake database and RAW tables for retail datasets.
 - Configured S3 integration, external stage, and Snowpipe for customer CSV ingestion.
@@ -40,3 +57,8 @@ The project uses six retail datasets:
 
 ## Project Status
 Core ingestion, transformation, testing, and documentation steps have been implemented. The project is maintained in GitHub as a practical Cloud Data Engineering portfolio project.
+
+
+## Limitations
+The incremental sales model uses a seven-day lookback window, so records arriving with order dates earlier than that window may require additional handling. Automated scheduling and CI validation are potential future improvements.
+
