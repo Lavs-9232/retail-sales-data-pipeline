@@ -2,6 +2,7 @@
 
 ## Project Overview
 An end-to-end cloud data engineering portfolio project that processes retail sales data using AWS S3, Snowflake, and dbt Cloud. The project demonstrates data ingestion, transformation, data quality testing, incremental processing, and analytical data modeling.
+An end-to-end cloud data engineering project that processes retail sales data using AWS S3, Snowflake, and dbt Cloud. The project demonstrates data ingestion, transformation, data quality testing, and analytical data modeling.
 
 ## Architecture
 **AWS S3 → Snowflake RAW → dbt Cloud → Snowflake DBT_DEV**
@@ -36,6 +37,17 @@ Customer files use Snowpipe for automatic ingestion; the other five datasets use
 - Created a customer snapshot to track historical changes.
 - Used a seed file for product category-to-department mapping.
 - Generated dbt documentation and model lineage.
+- 
+## Key Implementations
+- Created Snowflake database and RAW tables for retail datasets.
+- Configured S3 integration, external stage, and Snowpipe for customer CSV ingestion.
+- Developed dbt staging models to clean and validate source data.
+- Implemented customer and product dimensions, sales and returns fact models.
+- Added data quality tests for unique and non-null identifiers.
+- Implemented an incremental sales model.
+- Created a customer snapshot to track historical changes.
+- Used a seed file for product category mapping.
+- Generated dbt documentation and lineage.
 
 ## Repository Structure
 - `aws/` – S3 setup documentation
@@ -46,5 +58,7 @@ Customer files use Snowpipe for automatic ingestion; the other five datasets use
 ## Project Status
 Core ingestion, transformation, testing, and documentation steps have been implemented. The project is maintained in GitHub as a practical Cloud Data Engineering portfolio project.
 
+
 ## Limitations
 The incremental sales model uses a seven-day lookback window, so records arriving with order dates earlier than that window may require additional handling. Automated scheduling and CI validation are potential future improvements.
+
