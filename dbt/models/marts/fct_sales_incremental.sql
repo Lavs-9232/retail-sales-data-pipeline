@@ -24,7 +24,10 @@ INNER JOIN {{ ref('stg_order_items') }} oi
 
 {% if is_incremental() %}
     WHERE o.ORDER_DATE >= (
-        SELECT COALESCE(MAX(ORDER_DATE), '1900-01-01')
+        SELECT DATEADD(
+            day, -7,
+            COALESCE(MAX(ORDER_DATE), '1900-01-01'::DATE)
+        )
         FROM {{ this }}
     )
 {% endif %}
