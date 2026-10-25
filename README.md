@@ -33,7 +33,7 @@ Customer files use Snowpipe for automatic ingestion. The other five datasets are
 - Created Snowflake database objects and RAW tables for the retail datasets.
 - Configured AWS S3 integration, an external stage, and Snowpipe for customer-file ingestion.
 - Developed dbt staging models to prepare source data for analysis.
-- Built customer, product, and date dimensions, along with sales and returns fact models.
+- Built customer and product dimensions, along with sales and returns fact models.
 - Calculated sales amounts at the order-item level for sales analysis.
 - Enriched return records with payment method and payment status.
 - Added dbt data quality tests for selected unique and non-null columns.
